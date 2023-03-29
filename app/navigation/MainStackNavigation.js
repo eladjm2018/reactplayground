@@ -13,9 +13,9 @@ const MainStackNavigation = () => {
     
     return (
         <Stack.Navigator initialRouteName="Login" screenOptions={({ route, navigation }) => ({
-          headerShown: false,
-          gestureEnabled: true,
-          ...TransitionPresets.ModalPresentationIOS,
+          // headerShown: false,
+          // gestureEnabled: true,
+          // ...TransitionPresets.ModalPresentationIOS,
         })} >
           <Stack.Screen name="Login" component={Login} options={{ 
             title: 'הפניקס',
