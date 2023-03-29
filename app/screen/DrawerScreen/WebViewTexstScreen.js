@@ -21,8 +21,7 @@ const WebViewTexstScreen = () => {
 
   return (
 
-    <View className="flex-1 items-center">
-
+    <View className="flex-1">
       {!isShowWebView ?
         <>
           <TextInput
@@ -32,19 +31,15 @@ const WebViewTexstScreen = () => {
             placeholder="Set Url To WebView"
           />
 
-          <TouchableOpacity className="w-2/3 h-8 bg-slate-400 rounded justify-center" onPress={() => { setUrlToWebView() }}>
+          <TouchableOpacity className="w-3/3 h-8 bg-slate-400 rounded justify-center" onPress={() => { setUrlToWebView() }}>
             <Text className="text-center">Set Url For Webview</Text>
           </TouchableOpacity>
         </> :
         <>
-          <TouchableOpacity className="w-2/3 h-8 bg-slate-400 rounded justify-center" onPress={() => { backToUrl() }}>
+          <TouchableOpacity className="w-3/3 h-8 bg-slate-400 rounded justify-center" onPress={() => { backToUrl() }}>
             <Text className="text-center">close</Text>
           </TouchableOpacity>
-          <WebView onError={(syntheticEvent) => {
-            const { nativeEvent } = syntheticEvent;
-            console.warn('WebView error: ', nativeEvent);
-            שlert(nativeEvent)
-          }} source={{ uri: url }} />
+          <WebView source={{ uri: url}} />
         </>
       }
 
